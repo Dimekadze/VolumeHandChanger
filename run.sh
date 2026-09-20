@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-PROJECT_DIR="VolumeHandChanger"
 PYTHON_VERSION="python3.12"
 ENTRY_POINT="src/volumehandchanger/VolumeControl.py"
 
@@ -9,8 +8,6 @@ if ! command -v poetry &>/dev/null; then
     echo "Poetry not installed"
     exit 1
 fi
-
-cd "$PROJECT_DIR"
 
 if ! poetry env list --full-path 2>/dev/null | grep -q .; then
     poetry env use "$PYTHON_VERSION" --no-interaction
